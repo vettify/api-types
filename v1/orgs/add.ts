@@ -9,7 +9,19 @@ export const orgsAddRequest = z.object({
 export type OrgsAddRequest = z.infer<typeof orgsAddRequest>;
 
 export const orgsAddResponse = z.object({
-  id: z.number(),
+  currentOrg: z.number(),
+  orgs: z
+    .object({
+      id: z.number(),
+      owner: z.number(),
+      name: z.string(),
+      website: z.string(),
+      description: z.string(),
+      logo_id: z.number(),
+      created_at: z.number(),
+    })
+    .array(),
+  session: z.string(),
 });
 
 export type OrgsAddResponse = z.infer<typeof orgsAddResponse>;
