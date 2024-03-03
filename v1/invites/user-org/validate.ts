@@ -6,7 +6,7 @@ export const invitesUserOrgValidateRequest = z.object({
 
 export type InvitesUserOrgValidateRequest = z.infer<typeof invitesUserOrgValidateRequest>;
 
-export const inviteUserOrgValidateResponse = z.object({
+export const invitesUserOrgValidateResponse = z.object({
   invited_by: z.object({
     firstname: z.string(),
     lastname: z.string(),
@@ -18,4 +18,4 @@ export const inviteUserOrgValidateResponse = z.object({
   suggested_website: z.string(),
 });
 
-export type InviteUserOrgValidateResponse = z.infer<typeof inviteUserOrgValidateResponse>;
+export type InvitesUserOrgValidateResponse = z.infer<typeof invitesUserOrgValidateResponse>;

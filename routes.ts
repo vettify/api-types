@@ -12,7 +12,7 @@ import { invitesAssetSendRequest, invitesAssetSendResponse } from "./v1/invites/
 import { invitesAssetValidateRequest, invitesAssetValidateResponse } from "./v1/invites/asset/validate";
 import { invitesUserOrgProcessRequest, invitesUserOrgProcessResponse } from "./v1/invites/user-org/process";
 import { invitesUserOrgSendRequest } from "./v1/invites/user-org/send";
-import { inviteUserOrgValidateResponse, invitesUserOrgValidateRequest } from "./v1/invites/user-org/validate";
+import { invitesUserOrgValidateRequest, invitesUserOrgValidateResponse } from "./v1/invites/user-org/validate";
 import { orgsAddRequest, orgsAddResponse } from "./v1/orgs/add";
 import { orgsHistoryRequest, orgsHistoryResponse } from "./v1/orgs/history";
 import { orgsListResponse } from "./v1/orgs/list";
@@ -44,7 +44,7 @@ export type ApiRoutes = {
 
   "/api/v1/invites/user-org/process": [typeof invitesUserOrgProcessRequest, typeof invitesUserOrgProcessResponse],
   "/api/v1/invites/user-org/send": [typeof invitesUserOrgSendRequest, typeof empty],
-  "/api/v1/invites/user-org/validate": [typeof invitesUserOrgValidateRequest, typeof inviteUserOrgValidateResponse],
+  "/api/v1/invites/user-org/validate": [typeof invitesUserOrgValidateRequest, typeof invitesUserOrgValidateResponse],
 
   "/api/v1/orgs/add": [typeof orgsAddRequest, typeof orgsAddResponse],
   "/api/v1/orgs/history": [typeof orgsHistoryRequest, typeof orgsHistoryResponse],
