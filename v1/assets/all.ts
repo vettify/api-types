@@ -16,7 +16,7 @@ export const assetsAllResponse = z.object({
       tags: z.string(),
       description: z.string(),
       alt_attribute: z.string(),
-      assetCode: z.string(),
+      asset_code: z.string(),
       mimetype: z.string(),
       size: z.number(),
       target_url: z.string(),

@@ -34,8 +34,8 @@ export const invitesAssetValidateResponse = z.object({
     filename: z.string(),
     description: z.string(),
     alt_attribute: z.string(),
-    assetCode: z.string(),
-    rightCode: z.string(),
+    asset_code: z.string(),
+    right_code: z.string(),
   }),
 });
 

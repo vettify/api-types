@@ -17,7 +17,10 @@ export const orgsAddResponse = z.object({
       name: z.string(),
       website: z.string(),
       description: z.string(),
-      logo_id: z.number(),
+      logo: z.object({
+        asset_id: z.number(),
+        asset_code: z.string(),
+      }),
       created_at: z.number(),
     })
     .array(),

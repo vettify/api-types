@@ -14,7 +14,10 @@ export const orgsHistoryResponse = z.object({
       name: z.string().optional(),
       website: z.string().optional(),
       description: z.string().optional(),
-      logo_id: z.number().optional(),
+      logo: z.object({
+        asset_id: z.number(),
+        asset_code: z.string(),
+      }).optional(),
       created_at: z.number(),
     }),
   ),

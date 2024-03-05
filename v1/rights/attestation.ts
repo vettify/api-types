@@ -11,15 +11,19 @@ export const rightsAttestationResponse = z.object({
     name: z.string(),
     website: z.string(),
     description: z.string(),
-    logoAssetCode: z.string(),
+    logo: z.object({
+      asset_code: z.string(),
+    }),
   }),
   share: z.object({
     name: z.string(),
     website: z.string(),
     description: z.string(),
-    logoAssetCode: z.string(),
+    logo: z.object({
+      asset_code: z.string(),
+    }),
   }),
-  assetCode: z.string(),
+  asset_code: z.string(),
   active: z.boolean(),
   relationship_nature: z.string(),
   created_at: z.number(),
