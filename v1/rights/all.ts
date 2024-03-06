@@ -15,6 +15,7 @@ export const rightsAllResponse = z.object({
       other_org_id: z.number(),
       asset_id: z.number(),
       active: z.boolean(),
+      last_seen: z.number(),
       target_url_type: z.number(),
       target_url: z.string(),
       relationship_nature: z.string(),
@@ -33,6 +34,7 @@ export const rightsAllResponse = z.object({
       created_at: z.number(),
     }),
   ),
+  now: z.number(),
 });
 
 export type RightsAllResponse = z.infer<typeof rightsAllResponse>;
