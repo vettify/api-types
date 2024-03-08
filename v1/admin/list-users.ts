@@ -14,4 +14,3 @@ export const adminListUsersResponse = z.object({
 });
 
 export type AdminListUsersResponse = z.infer<typeof adminListUsersResponse>;
-
