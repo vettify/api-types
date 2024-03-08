@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const rightsAttestationRequest = z.object({
-  rightCode: z.string(),
+  right_code: z.string(),
 });
 
 export type RightsAttestationRequest = z.infer<typeof rightsAttestationRequest>;
