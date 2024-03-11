@@ -27,9 +27,11 @@ import { usersPasswordResetValidateRequest } from "./v1/users/password-reset/val
 import { usersLoginRequest, usersLoginResponse } from "./v1/users/login";
 import { usersSwitchOrgRequest, usersSwitchOrgResponse } from "./v1/users/switch-org";
 import { usersUpdateProfileRequest, usersUpdateProfileResponse } from "./v1/users/update-profile";
+import { adminDecryptRequest, adminDecryptResponse } from "./v1/admin/decrypt";
 
 export type ApiRoutes = {
   "/api/v1/admin/list-users": [typeof empty, typeof adminListUsersResponse],
+  "/api/v1/admin/decrypt": [typeof adminDecryptRequest, typeof adminDecryptResponse],
 
   "/api/v1/analytics/asset-views": [typeof analyticsAssetViewsRequest, typeof analyticsAssetViewsResponse],
 
