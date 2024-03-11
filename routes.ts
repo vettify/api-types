@@ -32,6 +32,7 @@ import { adminDecryptRequest, adminDecryptResponse } from "./v1/admin/decrypt";
 export type ApiRoutes = {
   "/api/v1/admin/list-users": [typeof empty, typeof adminListUsersResponse];
   "/api/v1/admin/decrypt": [typeof adminDecryptRequest, typeof adminDecryptResponse];
+  "/api/v1/admin/check-schema": [typeof empty, typeof empty];
 
   "/api/v1/analytics/asset-views": [typeof analyticsAssetViewsRequest, typeof analyticsAssetViewsResponse];
 
@@ -78,4 +79,4 @@ export const emailUrls = {
   invitesAsset: "${baseUrl}/app/invites/asset?code=${code}",
   invitesUserOrg: "${baseUrl}/app/invites/user-org?code=${code}",
   passwordReset: "${baseUrl}/app/user/password-reset?code=${code}",
-}
+};
