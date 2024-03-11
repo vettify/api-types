@@ -73,3 +73,9 @@ export type ApiRoutes = {
 
   "/api/v1/env": [typeof empty, typeof envResponse];
 };
+
+export const emailUrls = {
+  invitesAsset: "${baseUrl}/app/invites/asset?code=${code}",
+  invitesUserOrg: "${baseUrl}/app/invites/user-org?code=${code}",
+  passwordReset: "${baseUrl}/app/user/password-reset?code=${code}",
+}
