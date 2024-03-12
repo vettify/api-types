@@ -75,10 +75,11 @@ export type ApiRoutes = {
   "/api/v1/env": [typeof empty, typeof envResponse];
 };
 
-export const emailUrls = {
+export const frontendUrls = {
   invitesAsset: "${baseUrl}/view-snippet?code=${code}",
   invitesUserOrg: "${baseUrl}/org/invite?code=${code}",
   passwordReset: "${baseUrl}/user/password-reset?code=${code}",
+  attestationPage: "${baseUrl}/app/attestation?code=${code}",
 };
 
 export const cdnUrls = {
