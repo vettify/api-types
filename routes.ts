@@ -76,7 +76,7 @@ export type ApiRoutes = {
 };
 
 export const emailUrls = {
-  invitesAsset: "${baseUrl}/app/invites/asset?code=${code}",
-  invitesUserOrg: "${baseUrl}/app/invites/user-org?code=${code}",
-  passwordReset: "${baseUrl}/app/user/password-reset?code=${code}",
+  invitesAsset: "${baseUrl}/view-snippet?code=${code}",
+  invitesUserOrg: "${baseUrl}/org/invite?code=${code}",
+  passwordReset: "${baseUrl}/user/password-reset?code=${code}",
 };
