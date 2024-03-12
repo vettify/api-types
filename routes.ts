@@ -80,3 +80,10 @@ export const emailUrls = {
   invitesUserOrg: "${baseUrl}/org/invite?code=${code}",
   passwordReset: "${baseUrl}/user/password-reset?code=${code}",
 };
+
+export const cdnUrls = {
+  downloadl: "${cdnUrl}/asset/download-asset/${assetCode}",
+  file: "${cdnUrl}/asset/file/${assetCode}",
+  link: "${cdnUrl}/asset/link/${rightCode}",
+  view: "${cdnUrl}/asset/view/${rightCode}",
+}
