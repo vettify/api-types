@@ -37,6 +37,14 @@ export const invitesAssetValidateResponse = z.object({
     asset_code: z.string(),
     right_code: z.string(),
   }),
+  right: z.object({
+    relationship_nature: z.string(),
+    messages: z.object({
+      cursor: z.string(),
+    }),
+  }),
+  created_at: z.number(),
+  now: z.number(),
 });
 
 export type InvitesAssetValidateResponse = z.infer<typeof invitesAssetValidateResponse>;

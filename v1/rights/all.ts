@@ -11,6 +11,18 @@ export const rightsAllResponse = z.object({
   cursor: z.string(),
   owned: z.array(
     z.object({
+      invitee: z.object({
+        user: z.object({
+          firstname: z.string(),
+          lastname: z.string(),
+          email: z.string(),
+        }),
+        org: z.object({
+          id: z.number(),
+          name: z.string(),
+          website: z.string(),
+        }),
+      }),
       right: z.object({
         id: z.number(),
         asset_id: z.number(),
@@ -21,16 +33,8 @@ export const rightsAllResponse = z.object({
         relationship_nature: z.string(),
         created_at: z.number(),
       }),
-      invitee: z.object({
-        user: z.object({
-          firstname: z.string(),
-          lastname: z.string(),
-          email: z.string(),
-        }),
-        org: z.object({
-          name: z.string(),
-          website: z.string(),
-        }),
+      messages: z.object({
+        cursor: z.string(),
       }),
     }),
   ),
@@ -42,16 +46,10 @@ export const rightsAllResponse = z.object({
           lastname: z.string(),
         }),
         org: z.object({
+          id: z.number(),
           name: z.string(),
           website: z.string(),
         }),
-      }),
-      asset: z.object({
-        filename: z.string(),
-        description: z.string(),
-        alt_attribute: z.string(),
-        asset_code: z.string(),
-        target_url: z.string(),
       }),
       right: z.object({
         id: z.number(),
@@ -62,6 +60,16 @@ export const rightsAllResponse = z.object({
         target_url: z.string(),
         relationship_nature: z.string(),
         created_at: z.number(),
+      }),
+      messages: z.object({
+        cursor: z.string(),
+      }),
+      asset: z.object({
+        filename: z.string(),
+        description: z.string(),
+        alt_attribute: z.string(),
+        asset_code: z.string(),
+        target_url: z.string(),
       }),
     }),
   ),

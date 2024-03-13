@@ -28,6 +28,8 @@ import { usersLoginRequest, usersLoginResponse } from "./v1/users/login";
 import { usersSwitchOrgRequest, usersSwitchOrgResponse } from "./v1/users/switch-org";
 import { usersUpdateProfileRequest, usersUpdateProfileResponse } from "./v1/users/update-profile";
 import { adminDecryptRequest, adminDecryptResponse } from "./v1/admin/decrypt";
+import { rightsMessagesAddRequest, rightsMessagesAddResponse } from "./v1/rights/messages/add";
+import { rightsMessagesAllRequest, rightsMessagesAllResponse } from "./v1/rights/messages/all";
 
 export type ApiRoutes = {
   "/api/v1/admin/list-users": [typeof empty, typeof adminListUsersResponse];
@@ -59,6 +61,9 @@ export type ApiRoutes = {
   "/api/v1/rights/history": [typeof rightsHistoryRequest, typeof rightsHistoryResponse];
   "/api/v1/rights/update": [typeof rightsUpdateRequest, typeof empty];
 
+  "/api/v1/rights/messages/add": [typeof rightsMessagesAddRequest, typeof rightsMessagesAddResponse];
+  "/api/v1/rights/messages/all": [typeof rightsMessagesAllRequest, typeof rightsMessagesAllResponse];
+
   "/api/v1/users/password-reset/process": [
     typeof usersPasswordResetProcessRequest,
     typeof usersPasswordResetProcessResponse,
@@ -87,4 +92,4 @@ export const cdnUrls = {
   file: "${cdnUrl}/asset/file/${assetCode}",
   link: "${cdnUrl}/asset/link/${rightCode}",
   view: "${cdnUrl}/asset/view/${rightCode}",
-}
+};
