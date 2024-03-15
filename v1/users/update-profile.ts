@@ -4,6 +4,7 @@ export const usersUpdateProfileRequest = z.object({
   firstname: z.string().optional(),
   lastname: z.string().optional(),
   password: z.string().optional(),
+  old_password: z.string().optional(),
 });
 
 export type UsersUpdateProfileRequest = z.infer<typeof usersUpdateProfileRequest>;
