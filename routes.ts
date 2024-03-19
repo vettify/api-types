@@ -88,7 +88,7 @@ export const frontendUrls = {
 };
 
 export const cdnUrls = {
-  downloadl: "${cdnUrl}/asset/download-asset/${assetCode}",
+  download: "${cdnUrl}/asset/download-asset/${assetCode}",
   file: "${cdnUrl}/asset/file/${assetCode}",
   link: "${cdnUrl}/asset/link/${rightCode}",
   view: "${cdnUrl}/asset/view/${rightCode}",
