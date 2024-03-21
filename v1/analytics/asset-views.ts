@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const analyticsAssetViewsRequest = z.object({
+export const analyticsAssetViewsRequest = z.strictObject({
   asset_id: z.number(),
   from: z.number(),
   to: z.number(),
@@ -8,7 +8,7 @@ export const analyticsAssetViewsRequest = z.object({
 
 export type AnalyticsAssetViewsRequest = z.infer<typeof analyticsAssetViewsRequest>;
 
-export const analyticsAssetViewsResponse = z.object({
+export const analyticsAssetViewsResponse = z.strictObject({
   interval: z.number(),
   data: z
     .object({

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const orgsUpdateRequest = z.object({
+export const orgsUpdateRequest = z.strictObject({
   name: z.string().optional(),
   website: z.string().url().optional(),
   description: z.string().optional(),

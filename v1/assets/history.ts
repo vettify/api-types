@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const assetsHistoryRequest = z.object({
+export const assetsHistoryRequest = z.strictObject({
   id: z.number(),
   batchSize: z.number().min(1).max(100).default(20),
   cursor: z.string().optional(),
@@ -8,10 +8,10 @@ export const assetsHistoryRequest = z.object({
 
 export type AssetsHistoryRequest = z.infer<typeof assetsHistoryRequest>;
 
-export const assetsHistoryResponse = z.object({
+export const assetsHistoryResponse = z.strictObject({
   cursor: z.string(),
   history: z.array(
-    z.object({
+    z.strictObject({
       filename: z.string().optional(),
       tags: z.string().optional(),
       description: z.string().optional(),

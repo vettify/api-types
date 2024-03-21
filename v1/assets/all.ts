@@ -1,16 +1,16 @@
 import { z } from "zod";
 
-export const assetsAllRequest = z.object({
+export const assetsAllRequest = z.strictObject({
   batchSize: z.number().min(1).max(100).default(20),
   cursor: z.string().optional(),
 });
 
 export type AssetsAllRequest = z.infer<typeof assetsAllRequest>;
 
-export const assetsAllResponse = z.object({
+export const assetsAllResponse = z.strictObject({
   cursor: z.string(),
   assets: z.array(
-    z.object({
+    z.strictObject({
       id: z.number(),
       filename: z.string(),
       tags: z.string(),

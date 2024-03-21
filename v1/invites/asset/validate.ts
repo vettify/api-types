@@ -1,13 +1,13 @@
 import { z } from "zod";
 
-export const invitesAssetValidateRequest = z.object({
+export const invitesAssetValidateRequest = z.strictObject({
   code: z.string(),
 });
 
 export type InvitesAssetValidateRequest = z.infer<typeof invitesAssetValidateRequest>;
 
-export const invitesAssetValidateResponse = z.object({
-  invited_by: z.object({
+export const invitesAssetValidateResponse = z.strictObject({
+  invited_by: z.strictObject({
     firstname: z.string(),
     lastname: z.string(),
     orgname: z.string(),
@@ -30,16 +30,16 @@ export const invitesAssetValidateResponse = z.object({
       website: z.string(),
     })
     .optional(),
-  asset: z.object({
+  asset: z.strictObject({
     filename: z.string(),
     description: z.string(),
     alt_attribute: z.string(),
     asset_code: z.string(),
     right_code: z.string(),
   }),
-  right: z.object({
+  right: z.strictObject({
     relationship_nature: z.string(),
-    messages: z.object({
+    messages: z.strictObject({
       cursor: z.string(),
     }),
   }),

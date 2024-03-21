@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const invitesAssetProcessRequest = z.object({
+export const invitesAssetProcessRequest = z.strictObject({
   code: z.string(),
   password: z.string(),
   firstname: z.string(),
@@ -11,8 +11,8 @@ export const invitesAssetProcessRequest = z.object({
 
 export type InvitesAssetProcessRequest = z.infer<typeof invitesAssetProcessRequest>;
 
-export const invitesAssetProcessResponse = z.object({
-  user: z.object({
+export const invitesAssetProcessResponse = z.strictObject({
+  user: z.strictObject({
     email: z.string(),
     bitstate: z.number(),
     firstname: z.string(),
@@ -27,7 +27,7 @@ export const invitesAssetProcessResponse = z.object({
       name: z.string(),
       website: z.string(),
       description: z.string(),
-      logo: z.object({
+      logo: z.strictObject({
         asset_id: z.number(),
         asset_code: z.string(),
       }),

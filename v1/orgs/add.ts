@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const orgsAddRequest = z.object({
+export const orgsAddRequest = z.strictObject({
   name: z.string(),
   website: z.string().url(),
   description: z.string(),
@@ -8,7 +8,7 @@ export const orgsAddRequest = z.object({
 
 export type OrgsAddRequest = z.infer<typeof orgsAddRequest>;
 
-export const orgsAddResponse = z.object({
+export const orgsAddResponse = z.strictObject({
   currentOrg: z.number(),
   orgs: z
     .object({
@@ -17,7 +17,7 @@ export const orgsAddResponse = z.object({
       name: z.string(),
       website: z.string(),
       description: z.string(),
-      logo: z.object({
+      logo: z.strictObject({
         asset_id: z.number(),
         asset_code: z.string(),
       }),

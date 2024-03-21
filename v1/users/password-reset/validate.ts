@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const usersPasswordResetValidateRequest = z.object({
+export const usersPasswordResetValidateRequest = z.strictObject({
   code: z.string(),
 });
 

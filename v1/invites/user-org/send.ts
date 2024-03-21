@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const invitesUserOrgSendRequest = z.object({
+export const invitesUserOrgSendRequest = z.strictObject({
   firstname: z.string(),
   lastname: z.string(),
   email: z.string().email(),

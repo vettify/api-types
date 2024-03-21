@@ -1,25 +1,25 @@
 import { z } from "zod";
 
-export const rightsAttestationRequest = z.object({
+export const rightsAttestationRequest = z.strictObject({
   right_code: z.string(),
 });
 
 export type RightsAttestationRequest = z.infer<typeof rightsAttestationRequest>;
 
-export const rightsAttestationResponse = z.object({
-  owner: z.object({
+export const rightsAttestationResponse = z.strictObject({
+  owner: z.strictObject({
     name: z.string(),
     website: z.string(),
     description: z.string(),
-    logo: z.object({
+    logo: z.strictObject({
       asset_code: z.string(),
     }),
   }),
-  share: z.object({
+  share: z.strictObject({
     name: z.string(),
     website: z.string(),
     description: z.string(),
-    logo: z.object({
+    logo: z.strictObject({
       asset_code: z.string(),
     }),
   }),

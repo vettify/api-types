@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const usersUpdateProfileRequest = z.object({
+export const usersUpdateProfileRequest = z.strictObject({
   firstname: z.string().optional(),
   lastname: z.string().optional(),
   password: z.string().optional(),
@@ -9,7 +9,7 @@ export const usersUpdateProfileRequest = z.object({
 
 export type UsersUpdateProfileRequest = z.infer<typeof usersUpdateProfileRequest>;
 
-export const usersUpdateProfileResponse = z.object({
+export const usersUpdateProfileResponse = z.strictObject({
   email: z.string(),
   bitstate: z.number(),
   firstname: z.string(),

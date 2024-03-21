@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const contactFormRequest = z.object({
+export const contactFormRequest = z.strictObject({
   form_id: z.enum(["contact", "sales"]),
   email: z.string().email().optional(),
   firstname: z.string().optional(),

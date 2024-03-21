@@ -1,21 +1,21 @@
 import { z } from "zod";
 
-export const invitesAssetSendRequest = z.object({
-  asset: z.object({
+export const invitesAssetSendRequest = z.strictObject({
+  asset: z.strictObject({
     asset_id: z.number(),
   }),
-  invitee: z.object({
-    user: z.object({
+  invitee: z.strictObject({
+    user: z.strictObject({
       firstname: z.string(),
       lastname: z.string(),
       email: z.string().email(),
     }),
-    org: z.object({
+    org: z.strictObject({
       name: z.string(),
       website: z.string(),
     }),
   }),
-  right: z.object({
+  right: z.strictObject({
     target_url_type: z.number(),
     target_url: z.string(),
     relationship_nature: z.string(),
@@ -25,7 +25,7 @@ export const invitesAssetSendRequest = z.object({
 
 export type InvitesAssetSendRequest = z.infer<typeof invitesAssetSendRequest>;
 
-export const invitesAssetSendResponse = z.object({
+export const invitesAssetSendResponse = z.strictObject({
   right_id: z.number(),
 });
 

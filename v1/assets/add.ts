@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { fileRequest } from "../common/file_request";
 
-export const assetsAddRequest = z.object({
+export const assetsAddRequest = z.strictObject({
   filename: z.string(),
   file: fileRequest,
   tags: z.string(),
@@ -12,7 +12,7 @@ export const assetsAddRequest = z.object({
 
 export type AssetsAddRequest = z.infer<typeof assetsAddRequest>;
 
-export const assetsAddResponse = z.object({
+export const assetsAddResponse = z.strictObject({
   id: z.number(),
   filename: z.string(),
   tags: z.string(),

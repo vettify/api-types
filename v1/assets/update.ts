@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { fileRequest } from "../common/file_request";
 
-export const assetsUpdateRequest = z.object({
+export const assetsUpdateRequest = z.strictObject({
   id: z.number(),
   filename: z.string().optional(),
   tags: z.string().optional(),

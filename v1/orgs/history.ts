@@ -1,16 +1,16 @@
 import { z } from "zod";
 
-export const orgsHistoryRequest = z.object({
+export const orgsHistoryRequest = z.strictObject({
   batchSize: z.number().min(1).max(100).default(20),
   cursor: z.string().optional(),
 });
 
 export type OrgsHistoryRequest = z.infer<typeof orgsHistoryRequest>;
 
-export const orgsHistoryResponse = z.object({
+export const orgsHistoryResponse = z.strictObject({
   cursor: z.string(),
   history: z.array(
-    z.object({
+    z.strictObject({
       name: z.string().optional(),
       website: z.string().optional(),
       description: z.string().optional(),

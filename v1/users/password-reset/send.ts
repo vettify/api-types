@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const usersPasswordResetSendRequest = z.object({
+export const usersPasswordResetSendRequest = z.strictObject({
   email: z.string().email(),
 });
 

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const orgsListResponse = z.object({
+export const orgsListResponse = z.strictObject({
   orgs: z
     .object({
       id: z.number(),
@@ -8,7 +8,7 @@ export const orgsListResponse = z.object({
       name: z.string(),
       website: z.string(),
       description: z.string(),
-      logo: z.object({
+      logo: z.strictObject({
         asset_id: z.number(),
         asset_code: z.string(),
       }),

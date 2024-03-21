@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const rightsHistoryRequest = z.object({
+export const rightsHistoryRequest = z.strictObject({
   id: z.number(),
   batchSize: z.number().min(1).max(100).default(20),
   cursor: z.string().optional(),
@@ -8,10 +8,10 @@ export const rightsHistoryRequest = z.object({
 
 export type RightsHistoryRequest = z.infer<typeof rightsHistoryRequest>;
 
-export const rightsHistoryResponse = z.object({
+export const rightsHistoryResponse = z.strictObject({
   cursor: z.string(),
   history: z.array(
-    z.object({
+    z.strictObject({
       active: z.boolean().optional(),
       target_url_type: z.number().optional(),
       target_url: z.string().optional(),

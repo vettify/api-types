@@ -1,12 +1,12 @@
 import { z } from "zod";
 
-export const usersSwitchOrgRequest = z.object({
+export const usersSwitchOrgRequest = z.strictObject({
   orgId: z.number(),
 });
 
 export type UsersSwitchOrgRequest = z.infer<typeof usersSwitchOrgRequest>;
 
-export const usersSwitchOrgResponse = z.object({
+export const usersSwitchOrgResponse = z.strictObject({
   session: z.string(),
 });
 

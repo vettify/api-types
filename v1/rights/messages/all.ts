@@ -1,20 +1,20 @@
 import { z } from "zod";
 
-export const rightsMessagesAllRequest = z.object({
+export const rightsMessagesAllRequest = z.strictObject({
   batchSize: z.number().min(1).max(100).default(20),
   cursor: z.string(),
 });
 
 export type RightsMessagesAllRequest = z.infer<typeof rightsMessagesAllRequest>;
 
-export const rightsMessagesAllResponse = z.object({
+export const rightsMessagesAllResponse = z.strictObject({
   cursor: z.string(),
   messages: z.array(
-    z.object({
+    z.strictObject({
       id: z.number(),
-      author: z.object({
+      author: z.strictObject({
         org_id: z.number(),
-        user: z.object({
+        user: z.strictObject({
           firstname: z.string(),
           lastname: z.string(),
         }),

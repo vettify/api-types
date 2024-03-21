@@ -1,13 +1,13 @@
 import { z } from "zod";
 
-export const invitesUserOrgValidateRequest = z.object({
+export const invitesUserOrgValidateRequest = z.strictObject({
   code: z.string(),
 });
 
 export type InvitesUserOrgValidateRequest = z.infer<typeof invitesUserOrgValidateRequest>;
 
-export const invitesUserOrgValidateResponse = z.object({
-  invited_by: z.object({
+export const invitesUserOrgValidateResponse = z.strictObject({
+  invited_by: z.strictObject({
     firstname: z.string(),
     lastname: z.string(),
   }),

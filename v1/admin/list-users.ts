@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const adminListUsersResponse = z.object({
+export const adminListUsersResponse = z.strictObject({
   users: z
     .object({
       id: z.number(),

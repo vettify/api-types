@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const rightsUpdateRequest = z.object({
+export const rightsUpdateRequest = z.strictObject({
   id: z.number(),
   active: z.boolean().optional(),
   target_url_type: z.number().optional(),

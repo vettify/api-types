@@ -1,14 +1,14 @@
 import { z } from "zod";
 
-export const usersPasswordResetProcessRequest = z.object({
+export const usersPasswordResetProcessRequest = z.strictObject({
   code: z.string(),
   password: z.string(),
 });
 
 export type UsersPasswordResetProcessRequest = z.infer<typeof usersPasswordResetProcessRequest>;
 
-export const usersPasswordResetProcessResponse = z.object({
-  user: z.object({
+export const usersPasswordResetProcessResponse = z.strictObject({
+  user: z.strictObject({
     email: z.string(),
     bitstate: z.number(),
     firstname: z.string(),
@@ -23,7 +23,7 @@ export const usersPasswordResetProcessResponse = z.object({
       name: z.string(),
       website: z.string(),
       description: z.string(),
-      logo: z.object({
+      logo: z.strictObject({
         asset_id: z.number(),
         asset_code: z.string(),
       }),
