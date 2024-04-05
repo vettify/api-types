@@ -1,4 +1,4 @@
-import { AssetId, RightId } from "@/v1/entities";
+import { AssetId, RightId } from "../../../v1/entities";
 import { z } from "zod";
 
 export const invitesAssetSendRequest = z.strictObject({

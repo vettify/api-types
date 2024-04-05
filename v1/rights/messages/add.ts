@@ -1,4 +1,4 @@
-import { RightId, RightMessageId } from "@/v1/entities";
+import { RightId, RightMessageId } from "../../../v1/entities";
 import { z } from "zod";
 
 export const rightsMessagesAddRequest = z.strictObject({
