@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { AssetId } from "../entities";
 
 export const orgsUpdateRequest = z.strictObject({
   name: z.string().optional(),
@@ -6,7 +7,11 @@ export const orgsUpdateRequest = z.strictObject({
   description: z.string().optional(),
   logo: z
     .object({
-      asset_id: z.number(),
+      asset_id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as AssetId),
     })
     .optional(),
 });

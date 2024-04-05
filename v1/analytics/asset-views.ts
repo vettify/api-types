@@ -1,7 +1,12 @@
 import { z } from "zod";
+import { AssetId, RightId } from "../entities";
 
 export const analyticsAssetViewsRequest = z.strictObject({
-  asset_id: z.number(),
+  asset_id: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as AssetId),
   from: z.number(),
   to: z.number(),
 });
@@ -18,7 +23,11 @@ export const analyticsAssetViewsResponse = z.strictObject({
     .array(),
   rights: z
     .object({
-      id: z.number(),
+      id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as RightId),
       data: z
         .object({
           at: z.number(),

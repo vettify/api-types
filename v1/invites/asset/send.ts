@@ -1,8 +1,13 @@
+import { AssetId, RightId } from "@/v1/entities";
 import { z } from "zod";
 
 export const invitesAssetSendRequest = z.strictObject({
   asset: z.strictObject({
-    asset_id: z.number(),
+    asset_id: z
+      .number()
+      .positive()
+      .int()
+      .transform((x) => x as AssetId),
   }),
   invitee: z.strictObject({
     user: z.strictObject({
@@ -26,7 +31,11 @@ export const invitesAssetSendRequest = z.strictObject({
 export type InvitesAssetSendRequest = z.infer<typeof invitesAssetSendRequest>;
 
 export const invitesAssetSendResponse = z.strictObject({
-  right_id: z.number(),
+  right_id: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as RightId),
 });
 
 export type InvitesAssetSendResponse = z.infer<typeof invitesAssetSendResponse>;

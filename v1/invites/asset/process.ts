@@ -1,3 +1,4 @@
+import { AssetId, OrgId, UserId } from "@/v1/entities";
 import { z } from "zod";
 
 export const invitesAssetProcessRequest = z.strictObject({
@@ -19,16 +20,32 @@ export const invitesAssetProcessResponse = z.strictObject({
     lastname: z.string(),
     profile_pic: z.string(),
   }),
-  currentOrg: z.number(),
+  currentOrg: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as OrgId),
   orgs: z
     .object({
-      id: z.number(),
-      owner: z.number(),
+      id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as OrgId),
+      owner: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as UserId),
       name: z.string(),
       website: z.string(),
       description: z.string(),
       logo: z.strictObject({
-        asset_id: z.number(),
+        asset_id: z
+          .number()
+          .nonnegative()
+          .int()
+          .transform((x) => x as AssetId),
         asset_code: z.string(),
       }),
       created_at: z.number(),

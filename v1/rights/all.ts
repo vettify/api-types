@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { AssetId, OrgId, RightId } from "../entities";
 
 export const rightsAllRequest = z.strictObject({
   batchSize: z.number().min(1).max(100).default(20),
@@ -15,14 +16,26 @@ export const ownedRight = z.strictObject({
       email: z.string(),
     }),
     org: z.strictObject({
-      id: z.number(),
+      id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as OrgId),
       name: z.string(),
       website: z.string(),
     }),
   }),
   right: z.strictObject({
-    id: z.number(),
-    asset_id: z.number(),
+    id: z
+      .number()
+      .positive()
+      .int()
+      .transform((x) => x as RightId),
+    asset_id: z
+      .number()
+      .positive()
+      .int()
+      .transform((x) => x as AssetId),
     active: z.boolean(),
     last_seen: z.number(),
     target_url_type: z.number(),
@@ -44,13 +57,21 @@ export const sharedRight = z.strictObject({
       lastname: z.string(),
     }),
     org: z.strictObject({
-      id: z.number(),
+      id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as OrgId),
       name: z.string(),
       website: z.string(),
     }),
   }),
   right: z.strictObject({
-    id: z.number(),
+    id: z
+      .number()
+      .positive()
+      .int()
+      .transform((x) => x as RightId),
     right_code: z.string(),
     active: z.boolean(),
     last_seen: z.number(),

@@ -1,7 +1,12 @@
 import { z } from "zod";
+import { AssetId } from "../entities";
 
 export const assetsHistoryRequest = z.strictObject({
-  id: z.number(),
+  id: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as AssetId),
   batchSize: z.number().min(1).max(100).default(20),
   cursor: z.string().optional(),
 });

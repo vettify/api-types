@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { fileRequest } from "../common/file_request";
+import { AssetId } from "../entities";
 
 export const assetsAddRequest = z.strictObject({
   filename: z.string(),
@@ -13,7 +14,11 @@ export const assetsAddRequest = z.strictObject({
 export type AssetsAddRequest = z.infer<typeof assetsAddRequest>;
 
 export const assetsAddResponse = z.strictObject({
-  id: z.number(),
+  id: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as AssetId),
   filename: z.string(),
   tags: z.string(),
   description: z.string(),

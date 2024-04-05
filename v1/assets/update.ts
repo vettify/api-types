@@ -1,8 +1,13 @@
 import { z } from "zod";
 import { fileRequest } from "../common/file_request";
+import { AssetId } from "../entities";
 
 export const assetsUpdateRequest = z.strictObject({
-  id: z.number(),
+  id: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as AssetId),
   filename: z.string().optional(),
   tags: z.string().optional(),
   description: z.string().optional(),

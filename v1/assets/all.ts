@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { AssetId } from "../entities";
 
 export const assetsAllRequest = z.strictObject({
   batchSize: z.number().min(1).max(100).default(20),
@@ -11,7 +12,11 @@ export const assetsAllResponse = z.strictObject({
   cursor: z.string(),
   assets: z.array(
     z.strictObject({
-      id: z.number(),
+      id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as AssetId),
       filename: z.string(),
       tags: z.string(),
       description: z.string(),

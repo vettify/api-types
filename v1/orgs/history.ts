@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { AssetId } from "../entities";
 
 export const orgsHistoryRequest = z.strictObject({
   batchSize: z.number().min(1).max(100).default(20),
@@ -16,7 +17,11 @@ export const orgsHistoryResponse = z.strictObject({
       description: z.string().optional(),
       logo: z
         .object({
-          asset_id: z.number(),
+          asset_id: z
+            .number()
+            .positive()
+            .int()
+            .transform((x) => x as AssetId),
           asset_code: z.string(),
         })
         .optional(),

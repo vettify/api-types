@@ -12,7 +12,8 @@
     "resolveJsonModule": true,
     "paths": {
       "@/*": ["*"]
-    }
+    },
+    "types": []
   },
   "include": ["**/*.ts"]
 }

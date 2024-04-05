@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { AssetId, OrgId, UserId } from "../entities";
 
 export const orgsAddRequest = z.strictObject({
   name: z.string(),
@@ -9,16 +10,32 @@ export const orgsAddRequest = z.strictObject({
 export type OrgsAddRequest = z.infer<typeof orgsAddRequest>;
 
 export const orgsAddResponse = z.strictObject({
-  currentOrg: z.number(),
+  currentOrg: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as OrgId),
   orgs: z
     .object({
-      id: z.number(),
-      owner: z.number(),
+      id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as OrgId),
+      owner: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as UserId),
       name: z.string(),
       website: z.string(),
       description: z.string(),
       logo: z.strictObject({
-        asset_id: z.number(),
+        asset_id: z
+          .number()
+          .positive()
+          .int()
+          .transform((x) => x as AssetId),
         asset_code: z.string(),
       }),
       created_at: z.number(),

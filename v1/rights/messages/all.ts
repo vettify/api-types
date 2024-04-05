@@ -1,3 +1,4 @@
+import { OrgId, RightMessageId } from "@/v1/entities";
 import { z } from "zod";
 
 export const rightsMessagesAllRequest = z.strictObject({
@@ -11,15 +12,28 @@ export const rightsMessagesAllResponse = z.strictObject({
   cursor: z.string(),
   messages: z.array(
     z.strictObject({
-      id: z.number(),
+      id: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as RightMessageId),
       author: z.strictObject({
-        org_id: z.number(),
+        org_id: z
+          .number()
+          .positive()
+          .int()
+          .transform((x) => x as OrgId),
         user: z.strictObject({
           firstname: z.string(),
           lastname: z.string(),
         }),
       }),
-      edits: z.number().optional(),
+      edits: z
+        .number()
+        .positive()
+        .int()
+        .transform((x) => x as RightMessageId)
+        .optional(),
       message: z.string(),
       created_at: z.number(),
     }),

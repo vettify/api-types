@@ -1,7 +1,12 @@
 import { z } from "zod";
+import { RightId } from "../entities";
 
 export const rightsHistoryRequest = z.strictObject({
-  id: z.number(),
+  id: z
+    .number()
+    .positive()
+    .int()
+    .transform((x) => x as RightId),
   batchSize: z.number().min(1).max(100).default(20),
   cursor: z.string().optional(),
 });
