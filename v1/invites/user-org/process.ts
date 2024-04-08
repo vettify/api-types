@@ -15,6 +15,7 @@ export const invitesUserOrgProcessResponse = z.strictObject({
   user: z.strictObject({
     email: z.string(),
     bitstate: z.number(),
+    subscription_end: z.number(),
     firstname: z.string(),
     lastname: z.string(),
     profile_pic: z.string(),

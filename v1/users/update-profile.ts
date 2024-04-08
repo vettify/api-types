@@ -12,6 +12,7 @@ export type UsersUpdateProfileRequest = z.infer<typeof usersUpdateProfileRequest
 export const usersUpdateProfileResponse = z.strictObject({
   email: z.string(),
   bitstate: z.number(),
+  subscription_end: z.number(),
   firstname: z.string(),
   lastname: z.string(),
   profile_pic: z.string(),
