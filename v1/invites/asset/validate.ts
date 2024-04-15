@@ -36,12 +36,15 @@ export const invitesAssetValidateResponse = z.strictObject({
     alt_attribute: z.string(),
     asset_code: z.string(),
     right_code: z.string(),
+    target_url: z.string(),
   }),
   right: z.strictObject({
     relationship_nature: z.string(),
     messages: z.strictObject({
       cursor: z.string(),
     }),
+    target_url_type: z.number(),
+    target_url: z.string(),
   }),
   created_at: z.number(),
   now: z.number(),
