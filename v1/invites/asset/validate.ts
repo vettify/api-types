@@ -43,6 +43,7 @@ export const invitesAssetValidateResponse = z.strictObject({
     messages: z.strictObject({
       cursor: z.string(),
     }),
+    last_seen: z.number(),
     target_url_type: z.number(),
     target_url: z.string(),
   }),
