@@ -22,6 +22,7 @@ export const ownedRight = z.strictObject({
   }),
   right: z.strictObject({
     id: z.number(),
+    right_code: z.string(),
     asset_id: z.number(),
     active: z.boolean(),
     last_seen: z.number(),
