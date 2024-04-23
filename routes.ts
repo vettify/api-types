@@ -30,6 +30,7 @@ import { usersUpdateProfileRequest, usersUpdateProfileResponse } from "./v1/user
 import { adminDecryptRequest, adminDecryptResponse } from "./v1/admin/decrypt";
 import { rightsMessagesAddRequest, rightsMessagesAddResponse } from "./v1/rights/messages/add";
 import { rightsMessagesAllRequest, rightsMessagesAllResponse } from "./v1/rights/messages/all";
+import { analyticsRightOriginsRequest, analyticsRightOriginsResponse } from "./v1/analytics/right-origins";
 
 export type ApiRoutes = {
   "/api/v1/admin/list-users": [typeof empty, typeof adminListUsersResponse];
@@ -37,6 +38,7 @@ export type ApiRoutes = {
   "/api/v1/admin/check-schema": [typeof empty, typeof empty];
 
   "/api/v1/analytics/asset-views": [typeof analyticsAssetViewsRequest, typeof analyticsAssetViewsResponse];
+  "/api/v1/analytics/right-origins": [typeof analyticsRightOriginsRequest, typeof analyticsRightOriginsResponse];
 
   "/api/v1/assets/add": [typeof assetsAddRequest, typeof assetsAddResponse];
   "/api/v1/assets/all": [typeof assetsAllRequest, typeof assetsAllResponse];
