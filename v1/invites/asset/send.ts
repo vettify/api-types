@@ -4,6 +4,7 @@ export const invitesAssetSendRequest = z.strictObject({
   asset: z.strictObject({
     asset_id: z.number(),
   }),
+  // one of existing_user, new_user, or invitee (deprecated) must be set.
   existing_user: z.strictObject({
     email: z.string().email(),
     org: z.number(),
@@ -29,7 +30,7 @@ export const invitesAssetSendRequest = z.strictObject({
       name: z.string(),
       website: z.string(),
     }),
-  }),
+  }).optional(),
   right: z.strictObject({
     target_url_type: z.number(),
     target_url: z.string(),
