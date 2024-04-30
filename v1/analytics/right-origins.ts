@@ -8,12 +8,14 @@ export type AnalyticsRightOriginsRequest = z.infer<typeof analyticsRightOriginsR
 
 export const analyticsRightOriginsResponse = z.strictObject({
   sampled: z.boolean(), // indicates whether the result is approximate or exact
-  data: z.object({
-    origin: z.string(),
-    views: z.number(),
-    clicks: z.number(),
-    last_seen: z.number(), // most recent view or click
-  }).array(),
+  data: z
+    .object({
+      origin: z.string(),
+      views: z.number(),
+      clicks: z.number(),
+      last_seen: z.number(), // most recent view or click
+    })
+    .array(),
   now: z.number(),
 });
 

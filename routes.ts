@@ -31,6 +31,7 @@ import { adminDecryptRequest, adminDecryptResponse } from "./v1/admin/decrypt";
 import { rightsMessagesAddRequest, rightsMessagesAddResponse } from "./v1/rights/messages/add";
 import { rightsMessagesAllRequest, rightsMessagesAllResponse } from "./v1/rights/messages/all";
 import { analyticsRightOriginsRequest, analyticsRightOriginsResponse } from "./v1/analytics/right-origins";
+import { invitesAssetPrepareRequest, invitesAssetPrepareResponse } from "./v1/invites/asset/prepare";
 
 export type ApiRoutes = {
   "/api/v1/admin/list-users": [typeof empty, typeof adminListUsersResponse];
@@ -45,13 +46,14 @@ export type ApiRoutes = {
   "/api/v1/assets/history": [typeof assetsHistoryRequest, typeof assetsHistoryResponse];
   "/api/v1/assets/update": [typeof assetsUpdateRequest, typeof empty];
 
-  "/api/v1/invites/asset/process": [typeof invitesAssetProcessRequest, typeof invitesAssetProcessResponse];
+  "/api/v1/invites/asset/prepare": [typeof invitesAssetPrepareRequest, typeof invitesAssetPrepareResponse];
   "/api/v1/invites/asset/send": [typeof invitesAssetSendRequest, typeof invitesAssetSendResponse];
   "/api/v1/invites/asset/validate": [typeof invitesAssetValidateRequest, typeof invitesAssetValidateResponse];
+  "/api/v1/invites/asset/process": [typeof invitesAssetProcessRequest, typeof invitesAssetProcessResponse];
 
-  "/api/v1/invites/user-org/process": [typeof invitesUserOrgProcessRequest, typeof invitesUserOrgProcessResponse];
-  "/api/v1/invites/user-org/send": [typeof invitesUserOrgSendRequest, typeof empty];
   "/api/v1/invites/user-org/validate": [typeof invitesUserOrgValidateRequest, typeof invitesUserOrgValidateResponse];
+  "/api/v1/invites/user-org/send": [typeof invitesUserOrgSendRequest, typeof empty];
+  "/api/v1/invites/user-org/process": [typeof invitesUserOrgProcessRequest, typeof invitesUserOrgProcessResponse];
 
   "/api/v1/orgs/add": [typeof orgsAddRequest, typeof orgsAddResponse];
   "/api/v1/orgs/history": [typeof orgsHistoryRequest, typeof orgsHistoryResponse];
