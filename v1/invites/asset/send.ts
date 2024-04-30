@@ -4,6 +4,21 @@ export const invitesAssetSendRequest = z.strictObject({
   asset: z.strictObject({
     asset_id: z.number(),
   }),
+  existing_user: z.strictObject({
+    email: z.string().email(),
+    org: z.number(),
+  }).optional(),
+  new_user: z.strictObject({
+    user: z.strictObject({
+      firstname: z.string(),
+      lastname: z.string(),
+      email: z.string().email(),
+    }),
+    org: z.strictObject({
+      name: z.string(),
+      website: z.string(),
+    }),
+  }).optional(),
   invitee: z.strictObject({
     user: z.strictObject({
       firstname: z.string(),
