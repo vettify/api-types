@@ -32,6 +32,8 @@ import { rightsMessagesAddRequest, rightsMessagesAddResponse } from "./v1/rights
 import { rightsMessagesAllRequest, rightsMessagesAllResponse } from "./v1/rights/messages/all";
 import { analyticsRightOriginsRequest, analyticsRightOriginsResponse } from "./v1/analytics/right-origins";
 import { invitesAssetPrepareRequest, invitesAssetPrepareResponse } from "./v1/invites/asset/prepare";
+import { invitesAssetSendExistingUserRequest, invitesAssetSendExistingUserResponse } from "./v1/invites/asset/send-existing-user";
+import { invitesAssetSendNewUserRequest, invitesAssetSendNewUserResponse } from "./v1/invites/asset/send-new-user";
 
 export type ApiRoutes = {
   "/api/v1/admin/list-users": [typeof empty, typeof adminListUsersResponse];
@@ -48,6 +50,8 @@ export type ApiRoutes = {
 
   "/api/v1/invites/asset/prepare": [typeof invitesAssetPrepareRequest, typeof invitesAssetPrepareResponse];
   "/api/v1/invites/asset/send": [typeof invitesAssetSendRequest, typeof invitesAssetSendResponse];
+  "/api/v1/invites/asset/send-existing-user": [typeof invitesAssetSendExistingUserRequest, typeof invitesAssetSendExistingUserResponse];
+  "/api/v1/invites/asset/send-new-user": [typeof invitesAssetSendNewUserRequest, typeof invitesAssetSendNewUserResponse];
   "/api/v1/invites/asset/validate": [typeof invitesAssetValidateRequest, typeof invitesAssetValidateResponse];
   "/api/v1/invites/asset/process": [typeof invitesAssetProcessRequest, typeof invitesAssetProcessResponse];
 
