@@ -8,7 +8,6 @@ import { assetsAllRequest, assetsAllResponse } from "./v1/assets/all";
 import { assetsHistoryRequest, assetsHistoryResponse } from "./v1/assets/history";
 import { assetsUpdateRequest } from "./v1/assets/update";
 import { invitesAssetProcessRequest, invitesAssetProcessResponse } from "./v1/invites/asset/process";
-import { invitesAssetSendRequest, invitesAssetSendResponse } from "./v1/invites/asset/send";
 import { invitesAssetValidateRequest, invitesAssetValidateResponse } from "./v1/invites/asset/validate";
 import { invitesUserOrgProcessRequest, invitesUserOrgProcessResponse } from "./v1/invites/user-org/process";
 import { invitesUserOrgSendRequest } from "./v1/invites/user-org/send";
@@ -49,7 +48,6 @@ export type ApiRoutes = {
   "/api/v1/assets/update": [typeof assetsUpdateRequest, typeof empty];
 
   "/api/v1/invites/asset/prepare": [typeof invitesAssetPrepareRequest, typeof invitesAssetPrepareResponse];
-  "/api/v1/invites/asset/send": [typeof invitesAssetSendRequest, typeof invitesAssetSendResponse];
   "/api/v1/invites/asset/send-existing-user": [typeof invitesAssetSendExistingUserRequest, typeof invitesAssetSendExistingUserResponse];
   "/api/v1/invites/asset/send-new-user": [typeof invitesAssetSendNewUserRequest, typeof invitesAssetSendNewUserResponse];
   "/api/v1/invites/asset/validate": [typeof invitesAssetValidateRequest, typeof invitesAssetValidateResponse];
