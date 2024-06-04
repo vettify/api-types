@@ -33,6 +33,8 @@ import { analyticsRightOriginsRequest, analyticsRightOriginsResponse } from "./v
 import { invitesAssetPrepareRequest, invitesAssetPrepareResponse } from "./v1/invites/asset/prepare";
 import { invitesAssetSendExistingUserRequest, invitesAssetSendExistingUserResponse } from "./v1/invites/asset/send-existing-user";
 import { invitesAssetSendNewUserRequest, invitesAssetSendNewUserResponse } from "./v1/invites/asset/send-new-user";
+import { usersSignupRequest } from "./v1/users/signup";
+import { usersConfirmEmailRequest, usersConfirmEmailResponse } from "./v1/users/confirm-email";
 
 export type ApiRoutes = {
   "/api/v1/admin/list-users": [typeof empty, typeof adminListUsersResponse];
@@ -78,6 +80,8 @@ export type ApiRoutes = {
   "/api/v1/users/password-reset/validate": [typeof usersPasswordResetValidateRequest, typeof empty];
 
   "/api/v1/users/login": [typeof usersLoginRequest, typeof usersLoginResponse];
+  "/api/v1/users/signup": [typeof usersSignupRequest, typeof empty];
+  "/api/v1/users/confirm-email": [typeof usersConfirmEmailRequest, typeof usersConfirmEmailResponse];
   "/api/v1/users/switch-org": [typeof usersSwitchOrgRequest, typeof usersSwitchOrgResponse];
   "/api/v1/users/update-profile": [typeof usersUpdateProfileRequest, typeof usersUpdateProfileResponse];
 
@@ -91,6 +95,7 @@ export const frontendUrls = {
   invitesUserOrg: "${baseUrl}/org/invite?code=${code}",
   passwordReset: "${baseUrl}/user/password-reset?code=${code}",
   attestationPage: "${baseUrl}/app/attestation?code=${code}",
+  emailConfirmationPage: "${baseUrl}/user/email-confirmation?code=${code}",
 };
 
 export const cdnUrls = {
