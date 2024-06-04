@@ -87,6 +87,8 @@ export type ApiRoutes = {
 
   "/api/v1/contact-form": [typeof contactFormRequest, typeof empty];
 
+  "/api/v1/stripe_webhook": [typeof empty, typeof empty];
+
   "/api/v1/env": [typeof empty, typeof envResponse];
 };
 
