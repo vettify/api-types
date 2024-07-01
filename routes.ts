@@ -91,11 +91,11 @@ export type ApiRoutes = {
 };
 
 export const frontendUrls = {
-  invitesAsset: "${baseUrl}/view-snippet?code=${code}",
-  invitesUserOrg: "${baseUrl}/org/invite?code=${code}",
-  passwordReset: "${baseUrl}/user/password-reset?code=${code}",
+  invitesAsset: "${baseUrl}/app/view-snippet?code=${code}",
+  invitesUserOrg: "${baseUrl}/app/org-invite?code=${code}",
+  passwordReset: "${baseUrl}/app/password-reset?code=${code}",
   attestationPage: "${baseUrl}/app/attestation?code=${code}",
-  emailConfirmationPage: "${baseUrl}/user/email-confirmation?code=${code}",
+  emailConfirmationPage: "${baseUrl}/app/email-confirmation?code=${code}",
 };
 
 export const cdnUrls = {
