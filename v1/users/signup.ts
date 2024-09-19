@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const usersSignupRequest = z.strictObject({
+  code: z.string(),
   user: z.object({
     firstname: z.string(),
     lastname: z.string(),
